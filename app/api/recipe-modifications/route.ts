@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
   try {
     const body: RecipeModificationRequest = await request.json();
     
-    const modifiedRecipe = await modifyRecipe(body);
+    const modifiedRecipe = await modifyRecipe(body.recipeId, body.modifications);
     
     return NextResponse.json({ recipe: modifiedRecipe });
   } catch (error) {

@@ -120,6 +120,8 @@ const mockRecipeData = [
 interface ModifyRecipeRequest {
   dietaryPreference?: string;
   servingSize?: number;
+  excludeIngredients?: string[];
+  includeIngredients?: string[];
 }
 
 // Generate recipes based on ingredients and preferences
@@ -583,11 +585,11 @@ function convertNutritionFormat(nutrition: any): NutritionalInfo {
 // Modify a recipe
 export async function modifyRecipe(recipeId: string, request: ModifyRecipeRequest): Promise<Recipe> {
   try {
-    const { dietaryPreference, servingSize } = request;
+    const { dietaryPreference, servingSize, excludeIngredients, includeIngredients } = request;
     
     // Try to use Gemini API first
     try {
-      console.log('Modifying recipe with Gemini API:', { recipeId, dietaryPreference, servingSize });
+      console.log('Modifying recipe with Gemini API:', { recipeId, dietaryPreference, servingSize, excludeIngredients, includeIngredients });
       
       // Find the original recipe in mock data (in a real app, this would come from a database)
       const originalRecipe = mockRecipeData.find(recipe => recipe.id === recipeId) || mockRecipeData[0];
@@ -599,6 +601,8 @@ export async function modifyRecipe(recipeId: string, request: ModifyRecipeReques
       
       ${dietaryPreference ? `Make it ${dietaryPreference}.` : ''}
       ${servingSize ? `Adjust for ${servingSize} servings.` : ''}
+      ${excludeIngredients && excludeIngredients.length > 0 ? `Exclude these ingredients: ${excludeIngredients.join(', ')}.` : ''}
+      ${includeIngredients && includeIngredients.length > 0 ? `Include these ingredients: ${includeIngredients.join(', ')}.` : ''}
       
       IMPORTANT: For nutritional information, provide ONLY numeric values WITHOUT any units. For example, use "protein": 5 instead of "protein": "5g".
       DO NOT include units like "g" or "mg" with the nutritional values.
