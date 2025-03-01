@@ -2,6 +2,9 @@
 
 AI Recipe Assistant is a web application that brings the power of artificial intelligence to your culinary experience. This app helps you make the most out of the ingredients you have on hand, offering personalized meal suggestions, tailored meal plans, and much more.
 
+## Live Site
+https://dish-dive-ai.netlify.app/
+
 ## Features
 
 - **Recipe Suggestions**: Input the ingredients you have, and the AI generates creative recipes you can cook with those items.
