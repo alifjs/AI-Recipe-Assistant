@@ -17,7 +17,7 @@ https://dish-dive-ai.netlify.app/
 
 - **Frontend**: Next.js and Tailwind CSS
 - **State Management**: Redux Toolkit with RTK Query
-- **API**: OpenAI API for generating recipes, meal plans, and chat responses
+- **API**: Gemini API for generating recipes, meal plans, and chat responses
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ https://dish-dive-ai.netlify.app/
 
 - Node.js (v18 or higher)
 - npm or yarn
-- OpenAI API key
+- Gemini API key
 
 ### Installation
 
@@ -42,7 +42,7 @@ https://dish-dive-ai.netlify.app/
 
 3. Create a `.env` file in the root directory and add your OpenAI API key:
    ```
-   OPENAI_API_KEY=your_api_key_here
+   GEMINI_API_KEY=your_api_key_here
    ```
 
 4. Start the development server:
@@ -76,13 +76,3 @@ https://dish-dive-ai.netlify.app/
 1. Navigate to the "Chat" page
 2. Ask any cooking-related question
 3. Get instant answers about cooking techniques, ingredient substitutions, and more
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- OpenAI for providing the API that powers the AI features
-- Next.js and Tailwind CSS for the frontend framework and styling
-- All contributors who have helped improve this project
